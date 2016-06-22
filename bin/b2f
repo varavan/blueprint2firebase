@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var b2f = require('../src/index.js');
+var fs = require('fs');
+var program = require('commander');
+
+var blueprintDocumentDir = null;
+var targetFile = null;
+
+program
+ .version('0.0.1')
+ .arguments('<bludprintDocumentDir> <targetFile>')
+ .action(function (blueprintDocumentDirArg, targetFileArg) {
+     blueprintDocumentDir = blueprintDocumentDirArg;
+     targetFile = targetFileArg;
+  })
+  .parse(process.argv);
+
+if (typeof blueprintDocumentDir === null || targetFile === null) {
+   console.error('Not enought arguments');
+   process.exit(1);
+}
+
+fs.readFile(blueprintDocumentDir, 'utf8', function (err, data) {
+    if (err) {
+        return console.log(err);
+    }
+    b2f(data, targetFile)
+});

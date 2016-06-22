@@ -1,0 +1,7 @@
+"{{ name }}": {
+".read": {{ read }},
+".write": {{ write }},
+{% for field in fields %}
+    {{ field }}{% if loop.index < fields.length %},{% endif %}
+{% endfor %}
+}{% if !isLast %},{% endif %}
