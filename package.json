@@ -2,12 +2,8 @@
   "name": "blueprint2firebase",
   "version": "0.0.1",
   "description": "this script is made to take a blueprint based document and parse it into google firebase based rules",
-  "main": "src/index.js",
   "bin": {
-    "blueprint2firebase": "b2f.js"
-  },
-  "scripts": {
-    "test": "bin/b2f"
+    "blueprint2firebase": "./bin/b2f"
   },
   "repository": {
     "type": "git",
