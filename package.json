@@ -1,6 +1,6 @@
 {
   "name": "blueprint2firebase",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "this script is made to take a blueprint based document and parse it into google firebase based rules",
   "bin": {
     "blueprint2firebase": "./bin/b2f"
